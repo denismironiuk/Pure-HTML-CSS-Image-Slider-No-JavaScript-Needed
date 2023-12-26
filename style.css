@@ -1,0 +1,137 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: grey;
+}
+
+/* Image Styles */
+.carousel figure > img {
+  display: none;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  outline: 5px solid white;
+  box-shadow: 0px 0px 17px 7px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: 0px 0px 17px 7px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 0px 0px 17px 7px rgba(0, 0, 0, 0.41);
+}
+
+/* Carousel Container */
+.carousel {
+  position: relative;
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.carousel figure {
+  display: none;
+}
+.carousel figure .left img,
+.carousel figure .right img {
+  width: 5rem;
+}
+.carousel figure:hover :where(.left, .right) {
+  opacity: 1;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.5s linear;
+  transition: background-color 0.5s ease-out;
+  height: 100%;
+
+  padding: 0 1rem;
+  background-color: rgb(0 0 0 / 0);
+}
+
+.left {
+  left: 0;
+  top: 0;
+}
+.right {
+  right: 0;
+  top: 0;
+}
+
+figure:hover :where(.left, .right) {
+  opacity: 1;
+}
+
+:where(.left, .right):hover {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+:where(.left, .right) > img {
+  transition: transform 0.3s linear;
+  transform: scale(1);
+}
+
+:where(.left, .right):hover > img {
+  transform: scale(1.15);
+}
+/* Navigation */
+.carousel .nav {
+  position: absolute;
+  z-index: 999;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2rem;
+}
+
+.carousel .nav label {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  transition: background-color 1.3s ease;
+}
+
+/* Hide Radio Buttons */
+input[type="radio"] {
+  display: none;
+}
+
+/* Show Image Based on Checked Radio Button */
+input[type="radio"]#slide1:checked ~ figure:nth-of-type(1) img,
+input[type="radio"]#slide2:checked ~ figure:nth-of-type(2) img,
+input[type="radio"]#slide3:checked ~ figure:nth-of-type(3) img {
+  display: block;
+  margin: 0 auto;
+}
+input[type="radio"]#slide1:checked ~ figure:nth-of-type(1),
+input[type="radio"]#slide2:checked ~ figure:nth-of-type(2),
+input[type="radio"]#slide3:checked ~ figure:nth-of-type(3) {
+  display: grid;
+  grid-auto-flow: column;
+
+  position: relative;
+}
+
+/* Active Navigation Dot */
+#slide1:checked ~ .nav label:nth-child(1),
+#slide2:checked ~ .nav label:nth-child(2),
+#slide3:checked ~ .nav label:nth-child(3) {
+  background-color: #333;
+  outline: 2px solid white;
+}

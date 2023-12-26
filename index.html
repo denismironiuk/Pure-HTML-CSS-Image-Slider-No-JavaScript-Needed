@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags for character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Linking to the external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Page title -->
+    <title>Image Carousel</title>
+</head>
+
+<body>
+    <!-- Main carousel container -->
+    <div class="carousel">
+        
+        <!-- Radio buttons for carousel navigation -->
+        <input type="radio" id="slide1" name="carousel" checked />
+        <input type="radio" id="slide2" name="carousel" />
+        <input type="radio" id="slide3" name="carousel" />
+
+        <!-- Navigation indicators for carousel slides -->
+        <div class="nav">
+            <label for="slide1" aria-label="Go to slide 1" role="button"></label>
+            <label for="slide2" aria-label="Go to slide 2" role="button"></label>
+            <label for="slide3" aria-label="Go to slide 3" role="button"></label>
+        </div>
+
+        <!-- First slide -->
+        <figure>
+            <label for="slide3" class="left">
+                <!-- Left arrow icon -->
+                <img src="./assets/reshot-icon-left-arrow-button-RF5DMQX396-95d98.svg" alt="Left Arrow" aria-hidden="true">
+            </label>
+            <!-- Main image -->
+            <img src="https://picsum.photos/1200/860/?random1" alt="Image 1" aria-describedby="imageDescription1">
+            <label for="slide2" class="right">
+                <!-- Right arrow icon -->
+                <img src="./assets/reshot-icon-right-arrow-button-YAB8GEM7SD-c5f61.svg" alt="Right Arrow" aria-hidden="true">
+            </label>
+        </figure>
+
+        <!-- Second slide -->
+        <figure>
+            <label for="slide1" class="left">
+                <!-- Left arrow icon -->
+                <img src="./assets/reshot-icon-left-arrow-button-RF5DMQX396-95d98.svg" alt="Left Arrow" aria-hidden="true">
+            </label>
+            <!-- Main image -->
+            <img src="https://picsum.photos/1200/860/?random2" alt="Image 2" aria-describedby="imageDescription2">
+            <label for="slide3" class="right">
+                <!-- Right arrow icon -->
+                <img src="./assets/reshot-icon-right-arrow-button-YAB8GEM7SD-c5f61.svg" alt="Right Arrow" aria-hidden="true">
+            </label>
+        </figure>
+
+        <!-- Third slide -->
+        <figure>
+            <label for="slide2" class="left">
+                <!-- Left arrow icon -->
+                <img src="./assets/reshot-icon-left-arrow-button-RF5DMQX396-95d98.svg" alt="Left Arrow" aria-hidden="true">
+            </label>
+            <!-- Main image -->
+            <img src="https://picsum.photos/1200/860/?random3" alt="Image 3" aria-describedby="imageDescription3">
+            <label for="slide1" class="right">
+                <!-- Right arrow icon -->
+                <img src="./assets/reshot-icon-right-arrow-button-YAB8GEM7SD-c5f61.svg" alt="Right Arrow" aria-hidden="true">
+            </label>
+        </figure>
+    </div>
+</body>
+
+</html>
